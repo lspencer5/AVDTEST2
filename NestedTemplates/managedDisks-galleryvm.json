@@ -581,7 +581,7 @@
       {
         "apiVersion": "2015-06-15", 
         "type": "Microsoft.Compute/virtualMachines/extensions",
-        "name": "[concat(parameters('rdshPrefix'), add(copyindex(), parameters('vmInitialNumber')), '/', 'gpuextention')]",
+        "name": "[concat(parameters('rdshPrefix'), add(copyindex(), parameters('vmInitialNumber')), '/', 'AmdGpuDriverWindows')]",
         "location": "[parameters('location')]",
         "dependsOn": [ "rdsh-vm-loop"],
         "copy": {

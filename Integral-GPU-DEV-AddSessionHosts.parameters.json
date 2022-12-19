@@ -1,0 +1,130 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "nestedTemplatesLocation": {
+            "value": "https://raw.githubusercontent.com/lspencer5/AVDTEST2/main/NestedTemplates/"
+        },
+        "artifactsLocation": {
+            "value": "https://raw.githubusercontent.com/Azure/RDS-Templates/master/ARM-wvd-templates/DSC/Configuration.zip"
+        },
+        "tags": {
+            "value": {}
+        },
+        "hostpoolName": {
+            "value": "INTC-AVD-TEST-DEV" // TODO: Fill in parameter value
+        },
+        "hostpoolToken": {
+            "value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IkFGNTRGNjhEQUE2OTdGNjdDMEQwOTE0MkU3QkVEMjc3QTI3NTZCQTciLCJ0eXAiOiJKV1QifQ.eyJSZWdpc3RyYXRpb25JZCI6IjY0M2QxMzIzLWZmZjctNDE4ZS04YjBlLTk4MGVhYWVlOGJiYiIsIkJyb2tlclVyaSI6Imh0dHBzOi8vcmRicm9rZXItZy11cy1yMC53dmQubWljcm9zb2Z0LmNvbS8iLCJEaWFnbm9zdGljc1VyaSI6Imh0dHBzOi8vcmRkaWFnbm9zdGljcy1nLXVzLXIwLnd2ZC5taWNyb3NvZnQuY29tLyIsIkVuZHBvaW50UG9vbElkIjoiNzgyZmRlNGMtYTZlMS00YzMzLTkzNjctNjZhZWExZWYxODE5IiwiR2xvYmFsQnJva2VyVXJpIjoiaHR0cHM6Ly9yZGJyb2tlci53dmQubWljcm9zb2Z0LmNvbS8iLCJHZW9ncmFwaHkiOiJVUyIsIkdsb2JhbEJyb2tlclJlc291cmNlSWRVcmkiOiJodHRwczovLzc4MmZkZTRjLWE2ZTEtNGMzMy05MzY3LTY2YWVhMWVmMTgxOS5yZGJyb2tlci53dmQubWljcm9zb2Z0LmNvbS8iLCJCcm9rZXJSZXNvdXJjZUlkVXJpIjoiaHR0cHM6Ly83ODJmZGU0Yy1hNmUxLTRjMzMtOTM2Ny02NmFlYTFlZjE4MTkucmRicm9rZXItZy11cy1yMC53dmQubWljcm9zb2Z0LmNvbS8iLCJEaWFnbm9zdGljc1Jlc291cmNlSWRVcmkiOiJodHRwczovLzc4MmZkZTRjLWE2ZTEtNGMzMy05MzY3LTY2YWVhMWVmMTgxOS5yZGRpYWdub3N0aWNzLWctdXMtcjAud3ZkLm1pY3Jvc29mdC5jb20vIiwiQUFEVGVuYW50SWQiOiI1NDZkMWI4NS1lYzUxLTQwZGQtOTI4MC04NzMyOThhM2MzZjAiLCJuYmYiOjE2NzExMzAzOTIsImV4cCI6MTY3MTY4NTIwMCwiaXNzIjoiUkRJbmZyYVRva2VuTWFuYWdlciIsImF1ZCI6IlJEbWkifQ.u8slr_yt6rpsrJrcxlz-fwpwj2EPotxK_t3RQ0obbC6FN9NwhsNRSnmZRIJcN_tkgsGQerceruUsUxE6mr3RWQ8iElBUC40RInBhKdTxWTyqE618mx9_MRV7rILAOuqJB1COv0lHbdF3rMHaht1wCIH_kddjo7bL5lwge6953qr7i7HnYYf0Xv4uNL5-ffZhs0-PW7IlVtuGCgSAE8ke16xQh5D_fyCNVkqZxkAiMB4Qe8nRwTRg-vUrde0oXDcLECgOPesM0kq7KD-pz3fplaxtoyO7gQ_YXwKjy3MNNQMUHhod941amO8JNlxMI64BKgHveRbkZ57iJPM9YSgabg" // TODO: Fill in parameter value
+        },
+        "administratorAccountUsername": {
+            "value": "vhoang@integral-corp.com"
+        },
+        "administratorAccountPassword": {
+            "reference": {
+                "keyVault": {
+                  "id": "/subscriptions/cba1395f-adef-4d7a-ac3c-0e9624bca125/resourceGroups/INTC-RG-AVD/providers/Microsoft.KeyVault/vaults/INTC-KV"
+                },
+                "secretName": "vhoang"
+            }
+        },
+        "vmAdministratorAccountUsername": {
+            "value": "cfadmin"
+        },
+        "vmAdministratorAccountPassword": {
+            "reference": {
+                "keyVault": {
+                  "id": "/subscriptions/cba1395f-adef-4d7a-ac3c-0e9624bca125/resourceGroups/INTC-RG-AVD/providers/Microsoft.KeyVault/vaults/INTC-KV"
+                },
+                "secretName": "cfadmin"
+            }
+        },
+        "availabilityOption": {
+            "value": "None"
+        },
+        "createAvailabilitySet": {
+            "value": false
+        },
+        "availabilitySetUpdateDomainCount": {
+            "value": 5
+        },
+        "availabilitySetFaultDomainCount": {
+            "value": 2
+        },
+        "availabilityZones": {
+            "value": []
+        },
+        "vmResourceGroup": {
+            "value": "INTC-RG-AUTO-WUS2" // TODO: Fill in parameter value
+        },
+        "vmLocation": {
+            "value": "West US 2" // TODO: Fill in parameter value
+        },
+        "vmSize": {
+            "value": "Standard_NV8as_v4" // TODO: Fill in parameter value
+        },
+		"enableAcceleratedNetworking": {
+			"value": true
+		},
+        "vmInitialNumber": {
+            "value": 0
+        },
+        "vmNumberOfInstances": {
+            "value": 1 // TODO: Fill in parameter value
+        },
+        "vmNamePrefix": {
+            "value": "IA-TGPU-DEV" // TODO: Fill in parameter value
+        },
+        "vmImageType": {
+            "value": "CustomImage"
+        },
+        "vmGalleryImageOffer": {
+            "value": ""
+        },
+        "vmGalleryImagePublisher": {
+            "value": ""
+        },
+        "vmGalleryImageSKU": {
+            "value": ""
+        },
+        "vmImageVhdUri": {
+            "value": ""
+        },
+        "vmCustomImageSourceId": {
+            "value": "/subscriptions/cba1395f-adef-4d7a-ac3c-0e9624bca125/resourceGroups/INTC-RG-AVD-NCUS/providers/Microsoft.Compute/galleries/INTC_AVD_GALLERY_NCUS/images/INTC-GPU-IMAGE-8302022"
+        },
+        "vmDiskType": {
+            "value": "Premium_LRS"
+        },
+        "vmUseManagedDisks": {
+            "value": true
+        },
+        "existingVnetName": {
+            "value": "INTC-VNET01-AVD" // TODO: Fill in parameter value
+        },
+        "existingSubnetName": {
+            "value": "INTC-SUB01-AVD" // TODO: Fill in parameter value
+        },
+        "virtualNetworkResourceGroupName": {
+            "value": "INTC-RG-AZ" // TODO: Fill in parameter value
+        },
+        "ouPath": {
+            "value": "OU=Computers Azure,DC=integral-corp,DC=com"
+        },
+        "domain": {
+            "value": "integral-corp.com"
+        },
+        "workspaceId": {
+            "value": "6e3ad62c-dd67-4e11-b031-402ad39120d2" // TODO: Fill in parameter value
+        },
+        "workspaceKey": {
+            "value": "iBzuxzhAQmtcxZP4525L0T1xOyG3olV0Et+54rZXUhrxY51x6Ic5ytkQ3Xo6rKH6F2RwtpMkW1FbX9cV6awZvg==" // TODO: Fill in parameter value
+        },
+        "proximityPlacementGroupId": {
+            "value": "/subscriptions/cba1395f-adef-4d7a-ac3c-0e9624bca125/resourceGroups/INTC-RG-AVD/providers/Microsoft.Compute/proximityPlacementGroups/INTC-PPG-WUS-01"
+        },
+		"bootDiagnostics": {
+			"value": true
+		}
+    }
+}

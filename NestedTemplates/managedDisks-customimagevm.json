@@ -277,7 +277,7 @@
       "defaultValue": false
     },
     "bootDiagnostics": {
-      "type": "object",
+      "type": "bool",
       "metadata": {
         "description": "Boot diagnostics object taken as body of Diagnostics Profile in VM creation"
       },
@@ -493,8 +493,10 @@
           ]
         },
         "diagnosticsProfile": {
-          "bootDiagnostics": "[parameters('bootDiagnostics')]"
-        },
+            "bootDiagnostics": {
+              "enabled": "[parameters('bootDiagnostics')]"
+            }
+          },
         "proximityPlacementGroup": {
            "id": "[parameters('proximityPlacementGroupId')]"
         },

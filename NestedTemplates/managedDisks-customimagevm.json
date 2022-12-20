@@ -124,6 +124,12 @@
       },
       "defaultValue": true
     },
+    "enableAmdGpuDriverExtension": {
+        "type": "bool",
+        "metadata": {
+           "description": "Set this to true to enable the AMD GPU Driver Extension for all machines."
+       },
+    },    
     "administratorAccountUsername": {
       "type": "string",
       "metadata": {
@@ -582,6 +588,7 @@
       }
     },
     {
+        "condition": "[parameters('enableAmdGpuDriverExtension')]",
         "apiVersion": "2015-06-15", 
         "type": "Microsoft.Compute/virtualMachines/extensions",
         "name": "[concat(parameters('rdshPrefix'), add(copyindex(), parameters('vmInitialNumber')), '/', 'AmdGpuDriverWindows')]",

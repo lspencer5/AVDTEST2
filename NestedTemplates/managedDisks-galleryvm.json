@@ -585,7 +585,7 @@
         }
       },
       {
-        "condition": "[parameters('enableAmdGpuDriverExtension')],
+        "condition": "[parameters('enableAmdGpuDriverExtension')]",
         "apiVersion": "2015-06-15", 
         "type": "Microsoft.Compute/virtualMachines/extensions",
         "name": "[concat(parameters('rdshPrefix'), add(copyindex(), parameters('vmInitialNumber')), '/', 'AmdGpuDriverWindows')]",
